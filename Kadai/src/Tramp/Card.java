@@ -9,4 +9,13 @@ public class Card {
 		this.suit = suitaaa;
 		this.number = number;
 	}
+
+	public String getNumber() {
+		return Integer.toString(number);
+	}
+
+	public String getSuit() {
+		return suit;
+	}
+
 }

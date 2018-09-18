@@ -1,18 +1,17 @@
 package Tramp;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Deck {
 	int index;
 	String[] suitaaa = { "スペード", "クローバー", "ダイヤ", "ハート" };
 	String joker = "ジョーカー"; //ジョーカーのsuit
 	int jokernum = 14; //ジョーカーのnumber
-	LinkedList<Card> deck; //リスト作成
+	ArrayList<Card> deck; //リスト作成
 	int cardnum = 0;
-	Card drawcard = draw();
 
 	public void make() {
-		deck = new LinkedList<Card>();
+		deck = new ArrayList<Card>();
 		int count = 1;
 		for (cardnum = 1; cardnum <= 13; cardnum++) { //たぶんおけ
 			for (int j = 0; j < suitaaa.length; j++) {
@@ -29,12 +28,9 @@ public class Deck {
 	}
 
 	public Card draw() {
-		deck.get(0);
+		Card drawcard = deck.get(0);
+		deck.remove(0);
 		return drawcard;
-	}
-
-	public void go() {
-		System.out.println(this.drawcard);
 	}
 
 }
