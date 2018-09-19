@@ -4,15 +4,20 @@ public class Race {
 	public static void main(String args[]) {
 		Gate gate = new Gate(); //Gateクラスのインスタンス
 		gate.GateIn(); //gateに馬を入れる
-		Horse horse = gate.Run(); //馬が走る
+
+		Horse[] goal;
+
 		String gColor;
 		String gNumber;
+		int rank = 1;
 		for (int HorseNum = 0; HorseNum < 5; HorseNum++) {
-			//このままだと全部horseになるから次は名前を変えるところから
+
+			Horse horse = gate.goal(); //馬がゴールした
 			gColor = horse.getColor();
 			gNumber = horse.getNumber();
-			System.out.println(gColor);
-			System.out.println(gNumber);
+
+			System.out.println(rank + "着は" + gNumber + "番" + ":" + gColor + "の馬");
+			rank++;
 		}
 
 		/*	色々確認した残骸
